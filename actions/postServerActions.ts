@@ -55,3 +55,19 @@ export const deletePost = async (post: Post) => {
     return { error: "Server error" };
   }
 };
+
+export const editPost = async (post: Post, title: string) => {
+  try {
+    await prismadb.post.update({
+      where: {
+        id: post.id,
+      },
+      data: { title },
+    });
+
+    revalidatePath("/");
+    return { success: "post edited" };
+  } catch (error) {
+    return { error: "server error" };
+  }
+};

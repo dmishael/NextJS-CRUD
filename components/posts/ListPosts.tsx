@@ -1,5 +1,6 @@
 import { getPosts } from "@/actions/postServerActions";
 import DeletePost from "./DeletePost";
+import EditPost from "./EditPost";
 
 const ListPosts = async () => {
   const posts = await getPosts();
@@ -14,7 +15,7 @@ const ListPosts = async () => {
             >
               <span>{post.title}</span>
               <div className="flex gap-2 items-center">
-                <div>E</div>
+                <EditPost post={post} />
                 <DeletePost post={post} />
               </div>
             </div>
