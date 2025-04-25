@@ -27,6 +27,7 @@ const Button: React.FC<ButtonProps> = ({
       type={type}
       onClick={onClick}
       disabled={disabled}
+      //tailwind.css
       className={cn(
         "disabled:opacity-70 disabled:curser-not-allowed rounded-md hover:opacity-80 transition w-auto border-slate-300 flex items-center justify-center gap-2 py-3 px-5 border-2 bg-slate-700 text-white my-2",
         outline && "bg-transparent text-slate-700",
