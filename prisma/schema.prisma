@@ -1,15 +1,20 @@
-
+// Define the database connection configuration
 datasource db {
   provider  = "postgresql"
   url  	    = env("DATABASE_URL")
 }
 
+// Configure the Prisma Client generator
 generator client {
     provider = "prisma-client-js"
 }
 
+// Define the Post model for the database
 model Post {
+    // Unique identifier for each post
     id String @id @default(uuid())
+    // Title of the post
     title String
+    // Timestamp of when the post was created
     postedAt DateTime @default(now())
 }
